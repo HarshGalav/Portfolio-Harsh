@@ -272,12 +272,12 @@ export const projects = [
     title: "Portfolio",
     date: "Jul 2024 - Aug 2024",
     description:
-      "Developed a Portfolio built with ReactJS, Styled Components, and Material UI for a modern and responsive design. Uses GraphQL to display real-time LeetCode contest ratings and problem-solving stats. Highlights detailed project descriptions with links to GitHub and live demos.",
-    image:"https://github.com/user-attachments/assets/3875ac57-9ba0-466c-b405-c8b64999468e",
+      "Developed a Portfolio Built with ReactJS, Styled Components, and Material UI for a modern and responsive design. Uses GraphQL to display real-time LeetCode contest ratings and problem-solving stats.",
+    image:"https://github.com/user-attachments/assets/bf3bf64e-6ed6-4661-ab2a-129c72774620",
     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
     category: "web app",
-    github: "https://github.com/HarshGalav/JamJunction",
-    webapp: "https://drive.google.com/file/d/1Lo9ik52fdq7bjMwa57TK2XI7jGzBL6S9/view",
+    github: "https://github.com/HarshGalav/Portfolio-Harsh",
+    webapp: "https://portfolio-harsh-murex.vercel.app/",
   },
 
   {
@@ -286,11 +286,11 @@ export const projects = [
     date: "Jun 2023 - Jul 2023",
     description:
       "Developed a TextUtils to make changes in text according to user.",
-    image:"https://github.com/user-attachments/assets/8a619422-86dd-4c16-861c-b756d254b1c9",
-    tags: ["React Js", "GraphQL", "Material UI"],
+    image:"https://github.com/user-attachments/assets/7e5483df-3fad-417f-94d4-65617c83d4ce",
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
     category: "web app",
-    github: "https://github.com/HarshGalav/Portfolio-Harsh",
-    webapp: "https://portfolio-harsh-murex.vercel.app/",
+    github: "https://github.com/HarshGalav/TextUtils",
+    webapp: "https://text-utils-puce.vercel.app/",
   },
 
  
