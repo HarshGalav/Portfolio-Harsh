@@ -274,10 +274,23 @@ export const projects = [
     description:
       "Developed a Portfolio Built with ReactJS, Styled Components, and Material UI for a modern and responsive design. Uses GraphQL to display real-time LeetCode contest ratings and problem-solving stats.",
     image:"https://github.com/user-attachments/assets/bf3bf64e-6ed6-4661-ab2a-129c72774620",
-    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+    tags: ["React Js", "GraphQL", "", "Express Js", "Redux"],
     category: "web app",
     github: "https://github.com/HarshGalav/Portfolio-Harsh",
     webapp: "https://portfolio-harsh-murex.vercel.app/",
+  },
+
+  {
+    id: 0,
+    title: "Ecoyaan",
+    date: "May 2024 - Present",
+    description:
+      "Contributed to the website of Ecoyaan during summer Internship",
+    image:"https://github.com/user-attachments/assets/3aef34b0-fe49-40f5-af73-bb40de295fa4",
+    tags: ["React Js", ".NET", "C#", "TypeScript", "Tailwind"],
+    category: "web app",
+    github: "",
+    webapp: "https://ecoyaan.com/",
   },
 
   {
