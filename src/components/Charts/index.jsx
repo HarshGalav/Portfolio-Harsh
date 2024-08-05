@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 
 const Charts = () => {
   const [Cdata, setCData] = useState([]);
-  const [Qdata, setQData] = useState([]);
+  const [Qdata, setQData] = useState({});
   const chartRef = useRef(null);
   const chartRef2 = useRef(null);
 
@@ -32,7 +32,7 @@ const Charts = () => {
         return response.json();
       })
       .then(data => {
-        setQData(data.totalSubmissionNum); // Update state with fetched data
+        setQData(data); // Update state with the entire fetched data object
       })
       .catch(error => {
         console.error('Fetch error:', error);
@@ -41,7 +41,7 @@ const Charts = () => {
 
   useEffect(() => {
     if (Cdata.length > 0 && chartRef.current) {
-      // Data for the chart
+      // Data for the line chart
       const labels = Cdata.map(entry => entry.contest.title); // Assuming 'title' is a field in contest
       const ratings = Cdata.map(entry => entry.rating); // Assuming 'rating' is a field in contestParticipation
 
@@ -74,9 +74,9 @@ const Charts = () => {
   }, [Cdata]);
 
   useEffect(() => {
-    if (Qdata.length > 0 && chartRef2.current) {
+    if (Object.keys(Qdata).length > 0 && chartRef2.current) {
       // Data for the doughnut chart
-      const solvedData = Qdata.map(entry => entry.count); // Assuming 'count' is a field in totalSubmissionNum
+      const solvedData = [Qdata.solvedProblem, Qdata.easySolved, Qdata.mediumSolved, Qdata.hardSolved];
 
       // Check if a chart instance already exists and destroy it
       if (chartRef2.current.chart) {
@@ -106,19 +106,19 @@ const Charts = () => {
 
   return (
     <>
-    <h1 className='text-4xl text-white font-semibold text-secondary mb-5 text-center'>Leetcode Profile</h1>
-    <br />
-    <div className="flex flex-col sm:flex-row gap-12 md:gap-20 mx-auto mb-12 md:w-[90%]">
-      <div className="h-full w-full md:h-[30vw] md:w-[50vw] relative">
-        <h2 className='text-4xl relative left-[10%]  text-white text-center'>Contest Ratings Chart</h2>
-        <canvas className='relative mt-5' ref={chartRef} id="myChart"></canvas>
+      <h1 className='text-4xl text-white font-semibold text-secondary mb-5 text-center'>Leetcode Profile</h1>
+      <br />
+      <div className="flex flex-col sm:flex-row gap-12 md:gap-20 mx-auto mb-12 md:w-[90%]">
+        <div className="h-full w-full md:h-[30vw] md:w-[50vw] relative">
+          <h2 className='text-4xl relative left-[10%]  text-white text-center'>Contest Ratings Chart</h2>
+          <canvas className='relative mt-5' ref={chartRef} id="myChart"></canvas>
+        </div>
+        <div className="h-[50%] w-[50%] md:h-[20vw] md:w-[30vw] relative left-[25%] md:left-0">
+          <h2 className='text-4xl relative left-[10%] text-white text-center'>Question's Solved</h2>
+          <canvas className='relative left-[28%] mt-5' ref={chartRef2} id="myChart2"></canvas>
+        </div>
       </div>
-      <div className="h-[50%] w-[50%] md:h-[20vw] md:w-[30vw] relative left-[25%] md:left-0">
-        <h2 className='text-4xl relative left-[10%] text-white text-center'>Question's Solved</h2>
-        <canvas className='relative left-[28%] mt-5' ref={chartRef2} id="myChart2"></canvas>
-      </div>
-    </div></>
-    
+    </>
   );
 };
 
